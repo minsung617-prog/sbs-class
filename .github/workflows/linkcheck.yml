@@ -1,0 +1,16 @@
+name: linkcheck
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          while read u; do
+            [ -z "$u" ] && continue
+            r=$(curl -sSL -k -A "Mozilla/5.0" -o /tmp/b --max-time 25 -w "%{http_code} %{url_effective}" "$u" 2>&1 | tail -1)
+            t=$(grep -oiP '(?<=<title>)[^<]{0,80}' /tmp/b 2>/dev/null | head -1 | tr -d '\r\n\t')
+            s=$(wc -c < /tmp/b 2>/dev/null || echo 0)
+            echo "RES|$u|$r|$s|$t"
+            rm -f /tmp/b
+          done < linkcheck/urls.txt
