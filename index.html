@@ -531,6 +531,7 @@
   }
   .company-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
   .company-field { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .company-basis { grid-column: 1 / -1; font-size: 12px; color: var(--text-muted); margin: -4px 0 4px; }
   .company-ext {
     margin-left: auto;
     color: var(--text-muted);
@@ -2445,57 +2446,75 @@ const exams = [
 /* ── COMPANY DATA ── */
 
 const companies = [
-  // 인테리어
-  { name: '국보디자인',       cat: '인테리어',      url: 'https://www.ikukbo.com',                       emoji: '🏛️' },
-  { name: '지랩',             cat: '인테리어',      url: 'http://z-lab.co.kr/',                          emoji: '🏠' },
-  { name: '두양건축',         cat: '인테리어',      url: 'https://www.dykc.co.kr/',                      emoji: '🏗️' },
-  { name: '희림건축',         cat: '인테리어',      url: 'https://www.heerim.com/',                      emoji: '🏢' },
-  { name: '더 퍼스트펭귄',   cat: '인테리어',      url: 'http://t-fp.kr/',                              emoji: '🐧' },
-  { name: '엄지하우스',       cat: '인테리어',      url: 'https://www.eomjihouse.co.kr',                 emoji: '🏡' },
-  { name: '은민에스엔디',     cat: '인테리어',      url: 'http://www.eunmin.co.kr',                      emoji: '🔧' },
-  { name: '시공테크',         cat: '인테리어',      url: 'https://www.sigongtech.co.kr',                 emoji: '⚙️' },
-  { name: '다원디자인',       cat: '인테리어',      url: 'http://www.dawon.com',                         emoji: '✏️' },
-  { name: '삼원S&D',          cat: '인테리어',      url: 'http://samwonsd.co.kr',                        emoji: '🏗️' },
-  { name: '삼우종합건축',     cat: '인테리어',      url: 'https://www.samoo.com/',                       emoji: '🏛️' },
+  // 인테리어 — 2026 실내건축공사업 시공능력평가 순위(국토교통부) + 주요 기업
+  { name: '국보디자인', cat: '인테리어', url: 'https://ikukbo.com/ko', emoji: '🏛️', note: '1위 · 시공능력평가' },
+  { name: '다원앤컴퍼니', cat: '인테리어', url: 'http://www.dawon.com', emoji: '✏️', note: '2위 · 시공능력평가' },
+  { name: '은민에스엔디', cat: '인테리어', url: 'https://eunmin.co.kr/', emoji: '🔧', note: '3위 · 시공능력평가' },
+  { name: '시공테크', cat: '인테리어', url: 'https://www.sigongtech.co.kr/', emoji: '⚙️', note: '4위 · 시공능력평가' },
+  { name: '삼원에스앤디', cat: '인테리어', url: 'https://samwonsd.co.kr/', emoji: '🏗️', note: '5위 · 시공능력평가' },
+  { name: '삼성물산 건설부문', cat: '인테리어', url: 'https://www.secc.co.kr/ko', emoji: '🏢', note: '6위 · 시공능력평가' },
+  { name: '두양건축', cat: '인테리어', url: 'https://www.dykc.co.kr/', emoji: '🏗️', note: '7위 · 시공능력평가' },
+  { name: 'HDC랩스', cat: '인테리어', url: 'https://www.hdc-labs.com/', emoji: '🏙️', note: '8위 · 시공능력평가' },
+  { name: '동일인테리어', cat: '인테리어', url: 'http://www.dongilinterior.com/', emoji: '📐', note: '9위 · 시공능력평가' },
+  { name: '에스비테크', cat: '인테리어', url: null, emoji: '🧱', note: '10위 · 시공능력평가' },
+  { name: '알스퀘어(디자인)', cat: '인테리어', url: 'https://www.rsquare.co.kr/', emoji: '🟦', note: '주요 기업 · 오피스 인테리어' },
+  { name: '희림건축', cat: '인테리어', url: 'https://www.heerim.com/', emoji: '🏢', note: '주요 기업 · 건축설계' },
+  { name: '삼우종합건축', cat: '인테리어', url: 'https://samoo.com/', emoji: '🏛️', note: '주요 기업 · 건축설계' },
+  { name: '한샘', cat: '인테리어', url: 'https://www.hanssem.com/', emoji: '🛋️', note: '주요 기업 · 주거 인테리어' },
+  { name: '현대리바트', cat: '인테리어', url: 'https://www.hyundailivart.co.kr/', emoji: '🪑', note: '주요 기업 · 주거 인테리어' },
+  { name: '지랩', cat: '인테리어', url: 'http://z-lab.co.kr/', emoji: '🏠', note: '주요 기업 · 공간 디자인' },
+  { name: '더 퍼스트펭귄', cat: '인테리어', url: 'http://t-fp.kr/', emoji: '🐧', note: '주요 기업 · 공간 디자인' },
+  { name: '엄지하우스', cat: '인테리어', url: 'http://eomjihouse.co.kr/', emoji: '🏡', note: '주요 기업 · 인테리어' },
 
-  // 웹/편집디자인
-  { name: '허스키폭스',       cat: '웹/편집디자인', url: 'https://huskyfox.com/',                        emoji: '🦊' },
-  { name: '디파이',           cat: '웹/편집디자인', url: 'https://www.dfy.co.kr',                        emoji: '💡' },
-  { name: 'BAT',              cat: '웹/편집디자인', url: 'https://batcrew.co.kr/ko/',                    emoji: '🦇' },
-  { name: '엠싱크',           cat: '웹/편집디자인', url: 'http://www.m-sync.co.kr',                      emoji: '🔗' },
-  { name: '플러스엑스',       cat: '웹/편집디자인', url: 'https://www.plus-ex.com/',                     emoji: '➕' },
-  { name: '스튜디오fnt',      cat: '웹/편집디자인', url: 'https://studiofnt.com/',                       emoji: '🔤' },
-  { name: 'CFC',              cat: '웹/편집디자인', url: 'https://contentformcontext.com/',              emoji: '📐' },
-  { name: '더위버',           cat: '웹/편집디자인', url: 'http://theuber.co.kr',                         emoji: '🕸️' },
-  { name: '바이닐씨',         cat: '웹/편집디자인', url: 'https://www.vinylc.com/ko',                    emoji: '🎵' },
-  { name: '라커너스',         cat: '웹/편집디자인', url: 'https://www.reconers.com',                     emoji: '🎨' },
-  { name: '뮤자인',           cat: '웹/편집디자인', url: 'https://musign.net',                           emoji: '🎼' },
-  { name: '펜타브리드',       cat: '웹/편집디자인', url: 'https://www.pentabreed.com/',                  emoji: '🖥️' },
-  { name: '소이정',           cat: '웹/편집디자인', url: 'https://soijeong.com',                         emoji: '🌿' },
-  { name: '토탈임팩트',       cat: '웹/편집디자인', url: 'https://total-impact.net/',                    emoji: '💥' },
-  { name: '소디움파트너스',   cat: '웹/편집디자인', url: 'https://www.sodiumpartners.com/',              emoji: '🧪' },
-  { name: '인하우스',         cat: '웹/편집디자인', url: null, emoji: '🏢', note: '아모레퍼시픽디자인센터 / 현대자동차크리에이티브센터 / 배달의민족 등' },
+  // 웹/편집디자인 — 2025 매출 상위 5 + 대표 디지털 에이전시
+  { name: '와일리', cat: '웹/편집디자인', url: 'https://www.wylie.co.kr/', emoji: '📈', note: '매출 1위 · 2025' },
+  { name: '아이파트너즈', cat: '웹/편집디자인', url: 'https://www.ipartners.co.kr/', emoji: '🤝', note: '매출 2위 · 2025' },
+  { name: '매그넘빈트', cat: '웹/편집디자인', url: 'https://www.magnumvint.com/', emoji: '🧲', note: '매출 3위 · 2025' },
+  { name: '디지털웍스', cat: '웹/편집디자인', url: 'https://www.digitalworks.co.kr/', emoji: '💻', note: '매출 4위 · 2025' },
+  { name: '바이널씨', cat: '웹/편집디자인', url: 'https://www.vinylc.com/ko', emoji: '🎵', note: '매출 5위 · 2025' },
+  { name: '이모션글로벌', cat: '웹/편집디자인', url: 'https://www.emotion.co.kr/', emoji: '💫', note: '대표 에이전시' },
+  { name: '펜타브리드', cat: '웹/편집디자인', url: 'https://www.pentabreed.com/', emoji: '🖥️', note: '대표 에이전시' },
+  { name: '플러스엑스', cat: '웹/편집디자인', url: 'https://www.plus-ex.com/', emoji: '➕', note: '대표 에이전시' },
+  { name: '디파이', cat: '웹/편집디자인', url: 'https://www.dfy.co.kr', emoji: '💡', note: '대표 에이전시' },
+  { name: '허스키폭스', cat: '웹/편집디자인', url: 'https://huskyfox.com/', emoji: '🦊', note: '대표 에이전시' },
+  { name: 'BAT', cat: '웹/편집디자인', url: 'https://batcrew.co.kr/ko/', emoji: '🦇', note: '주요 기업 · 브랜딩' },
+  { name: '스튜디오fnt', cat: '웹/편집디자인', url: 'https://studiofnt.com/', emoji: '🔤', note: '주요 기업 · 그래픽·편집' },
+  { name: 'CFC', cat: '웹/편집디자인', url: 'https://contentformcontext.com/', emoji: '📐', note: '주요 기업 · 그래픽·편집' },
+  { name: '더위버', cat: '웹/편집디자인', url: 'https://theuber.co.kr/', emoji: '🕸️', note: '주요 기업 · 디지털 에이전시' },
+  { name: '리커너스', cat: '웹/편집디자인', url: 'https://www.reconers.com/', emoji: '🎨', note: '주요 기업 · 웹·앱 개발' },
+  { name: '뮤자인', cat: '웹/편집디자인', url: 'https://musign.net/', emoji: '🎼', note: '주요 기업 · 웹 에이전시' },
+  { name: '소이정', cat: '웹/편집디자인', url: 'https://www.soijeong.com/', emoji: '🌿', note: '주요 기업 · 디지털·디자인' },
+  { name: '토탈임팩트', cat: '웹/편집디자인', url: 'https://total-impact.net/', emoji: '💥', note: '주요 기업 · 디지털 에이전시' },
+  { name: '소디움파트너스', cat: '웹/편집디자인', url: 'https://www.sodiumpartners.com/', emoji: '🧪', note: '주요 기업 · 디지털 에이전시' },
+  { name: '인하우스', cat: '웹/편집디자인', url: null, emoji: '🏢', note: '아모레퍼시픽디자인센터 / 현대자동차크리에이티브센터 / 배달의민족 등' },
 
-  // 모션/VFX
-  { name: '자이언트스텝',     cat: '모션/VFX',      url: 'http://www.giantstep.co.kr/',                  emoji: '🚀' },
-  { name: '웨스트월드',       cat: '모션/VFX',      url: 'https://www.westworld.co.kr/',                 emoji: '🌎' },
-  { name: '델픽디자인스튜디오', cat: '모션/VFX',    url: 'https://delpic.com/main',                      emoji: '🔮' },
-  { name: 'M83',              cat: '모션/VFX',      url: 'https://www.m83.co.kr/',                       emoji: '🎬' },
-  { name: '슈퍼베리',         cat: '모션/VFX',      url: 'https://superverymore.tv/projects',            emoji: '🫐' },
-  { name: '덱스터스튜디오',   cat: '모션/VFX',      url: 'https://dexterstudios.com/',                   emoji: '🎥' },
-  { name: '스튜디오미르',     cat: '모션/VFX',      url: 'https://www.studiomir.co.kr/',                 emoji: '🌀' },
-  { name: '로커스',           cat: '모션/VFX',      url: 'https://locus.com/',                           emoji: '📍' },
-  { name: '위지윅스튜디오',   cat: '모션/VFX',      url: 'https://www.wswgstudios.com',                  emoji: '✨' },
-  { name: 'SAMG엔터',         cat: '모션/VFX',      url: 'https://samg.net/',                            emoji: '🎞️' },
-  { name: '엘리엇',           cat: '모션/VFX',      url: 'http://eliot.co.kr/',                          emoji: '⚡' },
-  { name: '빅슨커뮤니케이션', cat: '모션/VFX',      url: 'http://www.vixenvfxstudio.com/kr/',            emoji: '🦊' },
-  { name: 'VA코퍼레이션',     cat: '모션/VFX',      url: 'https://vacorp.co.kr/home/v2/',                emoji: '🎭' },
-  { name: '비전홀딩스',       cat: '모션/VFX',      url: 'http://visionholdingscorp.com/',               emoji: '👁️' },
-  { name: '모팩',             cat: '모션/VFX',      url: 'https://www.mofacstudios.com/',                emoji: '🎪' },
-  { name: '디자인피버',       cat: '모션/VFX',      url: 'https://designfever.com/',                     emoji: '🔥' },
-  { name: '걸리버스튜디오',   cat: '모션/VFX',      url: 'https://www.gulliverstudios.com/about',        emoji: '🗺️' },
+  // 모션/VFX — 대표 VFX·CG 스튜디오 + 모션그래픽·애니메이션 주요 기업
+  { name: '덱스터스튜디오', cat: '모션/VFX', url: 'https://dexterstudios.com/', emoji: '🎥', note: '대표 VFX·CG 스튜디오' },
+  { name: '위지윅스튜디오', cat: '모션/VFX', url: 'http://www.wysiwygstudios.com/', emoji: '✨', note: '대표 VFX·CG 스튜디오' },
+  { name: '자이언트스텝', cat: '모션/VFX', url: 'https://www.giantstep.co.kr/', emoji: '🚀', note: '대표 VFX·CG 스튜디오' },
+  { name: '웨스트월드', cat: '모션/VFX', url: 'https://www.westworld.co.kr/', emoji: '🌎', note: '대표 VFX·CG 스튜디오' },
+  { name: '모팩스튜디오', cat: '모션/VFX', url: 'https://www.mofacstudios.com/', emoji: '🎪', note: '대표 VFX·CG 스튜디오' },
+  { name: '디지털아이디어', cat: '모션/VFX', url: 'http://www.digitalidea.co.kr/main', emoji: '💡', note: '대표 VFX·CG 스튜디오' },
+  { name: '매크로그래프', cat: '모션/VFX', url: 'https://www.macrograph.co.kr/', emoji: '🌀', note: '대표 VFX·CG 스튜디오' },
+  { name: 'M83', cat: '모션/VFX', url: 'https://www.m83.co.kr/', emoji: '🎬', note: '대표 VFX·CG 스튜디오' },
+  { name: 'VA코퍼레이션', cat: '모션/VFX', url: 'https://vacorp.co.kr/home/v2/', emoji: '🎭', note: '대표 VFX·CG 스튜디오' },
+  { name: '스튜디오미르', cat: '모션/VFX', url: 'https://www.studiomir.co.kr/', emoji: '🖌️', note: '대표 애니메이션 스튜디오' },
+  { name: '로커스', cat: '모션/VFX', url: 'https://locus.com/', emoji: '📍', note: '주요 기업 · 애니메이션' },
+  { name: 'SAMG엔터', cat: '모션/VFX', url: 'https://samg.net/', emoji: '🎞️', note: '주요 기업 · 애니메이션' },
+  { name: '엘리엇', cat: '모션/VFX', url: 'https://www.eliot.co.kr/', emoji: '⚡', note: '주요 기업 · VFX' },
+  { name: '빅슨커뮤니케이션', cat: '모션/VFX', url: 'http://www.vixenvfxstudio.com/kr/', emoji: '🦊', note: '주요 기업 · VFX' },
+  { name: '비전홀딩스', cat: '모션/VFX', url: 'http://visionholdingscorp.com/', emoji: '👁️', note: '주요 기업 · VFX' },
+  { name: '걸리버스튜디오', cat: '모션/VFX', url: 'https://www.gulliverstudios.com/about', emoji: '🗺️', note: '주요 기업 · VFX·애니메이션' },
+  { name: '델픽디자인스튜디오', cat: '모션/VFX', url: 'https://delpic.com/main', emoji: '🔮', note: '주요 기업 · 모션그래픽' },
+  { name: '슈퍼베리모어', cat: '모션/VFX', url: 'https://superverymore.tv/projects', emoji: '🫐', note: '주요 기업 · 모션그래픽' },
+  { name: '디자인피버', cat: '모션/VFX', url: 'https://designfever.com/', emoji: '🔥', note: '주요 기업 · 디지털·모션' },
 ];
 
+const companyCategoryBasis = {
+  '인테리어':      '1~10위: 2026 실내건축공사업 시공능력평가(국토교통부) · 아래는 업계 주요 기업',
+  '웹/편집디자인': '1~5위: 2025 매출 기준 · 이어서 업계 대표 에이전시와 주요 기업',
+  '모션/VFX':      '공식 순위가 없어 업계 대표 스튜디오 순으로 정리 · 아래는 주요 기업',
+};
 const companyCategoryLabels = {
   '인테리어':      '🏠 인테리어 학과',
   '웹/편집디자인': '🖥️ 웹디자인 · 편집디자인',
@@ -2520,6 +2539,12 @@ function renderCompanyGrid(tab) {
       label.className = 'group-label';
       label.textContent = companyCategoryLabels[cat];
       grid.appendChild(label);
+    }
+    if (companyCategoryBasis[cat]) {
+      const basis = document.createElement('div');
+      basis.className = 'company-basis';
+      basis.textContent = companyCategoryBasis[cat];
+      grid.appendChild(basis);
     }
 
     items.forEach(c => {
