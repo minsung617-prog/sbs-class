@@ -9,10 +9,7 @@ jobs:
           while read u; do
             [ -z "$u" ] && continue
             r=$(curl -sSL -k -A "Mozilla/5.0" -o /tmp/b --max-time 25 -w "%{http_code} %{url_effective}" "$u" 2>&1 | tail -1)
-            b=$(head -c 700 /tmp/b 2>/dev/null | tr -s '\r\n\t ' ' ')
-            echo "RES|$u|$r|$b"
-            rm -f /tmp/b
+            t=$(grep -oiP '(?<=<title>)[^<]{0,80}' /tmp/b | head -1)
+            echo "RES|$u|$r|$t"
           done < linkcheck/urls.txt
-          for q in "다원앤컴퍼니 인테리어" "에스비테크 실내건축 인테리어" "위지윅스튜디오" "포스크리에이티브파티 VFX" "플립커뮤니케이션즈" "엠싱크 웹에이전시" "엄지하우스 인테리어" "로커스 애니메이션 스튜디오" "삼우종합건축사사무소" "스튜디오미르 애니메이션"; do
-            curl -s -A "Mozilla/5.0" --max-time 20 "https://html.duckduckgo.com/html/?q=$(python3 -c 'import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))' "$q")" | grep -oP 'result__url[^>]*>\s*\K[^<]+' | head -5 | tr -s ' \n' ' ' | sed "s/^/SRCH|$q|/"; echo
-          done
+          curl -sSL -A "Mozilla/5.0" --max-time 20 http://t-fp.kr/ | sed 's/<[^>]*>/ /g' | tr -s ' \n' ' ' | head -c 600 | sed 's/^/TFP|/'; echo
