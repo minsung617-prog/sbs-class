@@ -832,14 +832,14 @@
     <div class="tab-pills">
       <button class="tab-pill active" onclick="setTab('sch','mt',this)">월·목</button>
       <button class="tab-pill" onclick="setTab('sch','day9',this)">9일제 격일</button>
-      <button class="tab-pill" onclick="setTab('sch','ai1',this)">AI에이전트1</button>
-      <button class="tab-pill" onclick="setTab('sch','ai2',this)">AI에이전트2</button>
+      <button class="tab-pill" onclick="setTab('sch','ai1',this)">AI에이전트</button>
+      <button class="tab-pill" onclick="setTab('sch','ai2',this)">AI프롬프트</button>
     </div>
 
     <!-- 월목 시간표 -->
 <div id="sch-mt">
   <div class="cal-wrap">
-    <div class="cal-header">2026년 10월 19일 ~ 11월 12일</div>
+    <div class="cal-header">2026년 11월 17일 ~ 12월 14일</div>
 
     <div class="cal-grid">
       <div class="cal-dow">월</div>
@@ -848,103 +848,89 @@
       <div class="cal-dow">목</div>
       <div class="cal-dow">금</div>
 
-      <!-- 10월 19일 ~ 10월 23일 -->
+      <!-- 11월 16일 ~ 11월 20일 -->
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell">
+        <div class="cal-date">17</div>
+        <div class="cal-block mt">월 ~ 목</div>
+      </div>
+      <div class="cal-cell">
+        <div class="cal-date">18</div>
+        <div class="cal-block mt">월 ~ 목</div>
+      </div>
       <div class="cal-cell">
         <div class="cal-date">19</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">20</div></div>
 
+      <!-- 11월 23일 ~ 11월 27일 -->
       <div class="cal-cell">
-        <div class="cal-date">20</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">21</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">22</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
-      <div class="cal-cell empty">
         <div class="cal-date">23</div>
+        <div class="cal-block mt">월 ~ 목</div>
       </div>
-
-      <!-- 10월 26일 ~ 10월 30일 -->
+      <div class="cal-cell">
+        <div class="cal-date">24</div>
+        <div class="cal-block mt">월 ~ 목</div>
+      </div>
+      <div class="cal-cell">
+        <div class="cal-date">25</div>
+        <div class="cal-block mt">월 ~ 목</div>
+      </div>
       <div class="cal-cell">
         <div class="cal-date">26</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">27</div></div>
 
+      <!-- 11월 30일 ~ 12월 4일 -->
       <div class="cal-cell">
-        <div class="cal-date">27</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">28</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">29</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
-      <div class="cal-cell empty">
         <div class="cal-date">30</div>
+        <div class="cal-block mt">월 ~ 목</div>
       </div>
-
-      <!-- 11월 2일 ~ 11월 6일 -->
+      <div class="cal-cell">
+        <div class="cal-date">1</div>
+        <div class="cal-block mt">월 ~ 목</div>
+      </div>
       <div class="cal-cell">
         <div class="cal-date">2</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
-
       <div class="cal-cell">
         <div class="cal-date">3</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">4</div></div>
 
+      <!-- 12월 7일 ~ 12월 11일 -->
       <div class="cal-cell">
-        <div class="cal-date">4</div>
+        <div class="cal-date">7</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
-
       <div class="cal-cell">
-        <div class="cal-date">5</div>
+        <div class="cal-date">8</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
-
-      <div class="cal-cell empty">
-        <div class="cal-date">6</div>
-      </div>
-
-      <!-- 11월 9일 ~ 11월 12일 -->
       <div class="cal-cell">
         <div class="cal-date">9</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
-
       <div class="cal-cell">
         <div class="cal-date">10</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">11</div></div>
 
+      <!-- 12월 14일 ~ 12월 18일 -->
       <div class="cal-cell">
-        <div class="cal-date">11</div>
+        <div class="cal-date">14</div>
         <div class="cal-block mt">월 ~ 목</div>
       </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">12</div>
-        <div class="cal-block mt">월 ~ 목</div>
-      </div>
-
       <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+
     </div>
   </div>
 
@@ -958,7 +944,7 @@
  <!-- 9일제 격일 -->
 <div id="sch-day9" style="display:none">
   <div class="cal-wrap">
-    <div class="cal-header">2026년 10월 19일 ~ 11월 11일</div>
+    <div class="cal-header">2026년 11월 17일 ~ 12월 10일</div>
 
     <div class="cal-grid">
       <div class="cal-dow">월</div>
@@ -967,102 +953,88 @@
       <div class="cal-dow">목</div>
       <div class="cal-dow">금</div>
 
-      <!-- 10월 19일 ~ 10월 23일 -->
+      <!-- 11월 16일 ~ 11월 20일 -->
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell">
+        <div class="cal-date">17</div>
+        <div class="cal-block twf">화목금</div>
+      </div>
+      <div class="cal-cell">
+        <div class="cal-date">18</div>
+        <div class="cal-block mwf">월수금</div>
+      </div>
       <div class="cal-cell">
         <div class="cal-date">19</div>
-        <div class="cal-block mwf">월수금</div>
+        <div class="cal-block twf">화목금</div>
       </div>
-
       <div class="cal-cell">
         <div class="cal-date">20</div>
-        <div class="cal-block twf">화목금</div>
-      </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">21</div>
         <div class="cal-block mwf">월수금</div>
       </div>
 
-      <div class="cal-cell">
-        <div class="cal-date">22</div>
-        <div class="cal-block twf">화목금</div>
-      </div>
-
+      <!-- 11월 23일 ~ 11월 27일 -->
       <div class="cal-cell">
         <div class="cal-date">23</div>
-        <div class="cal-block twf">화목금</div>
-      </div>
-
-      <!-- 10월 26일 ~ 10월 30일 -->
-      <div class="cal-cell">
-        <div class="cal-date">26</div>
         <div class="cal-block mwf">월수금</div>
       </div>
-
+      <div class="cal-cell">
+        <div class="cal-date">24</div>
+        <div class="cal-block twf">화목금</div>
+      </div>
+      <div class="cal-cell">
+        <div class="cal-date">25</div>
+        <div class="cal-block mwf">월수금</div>
+      </div>
+      <div class="cal-cell">
+        <div class="cal-date">26</div>
+        <div class="cal-block twf">화목금</div>
+      </div>
       <div class="cal-cell">
         <div class="cal-date">27</div>
         <div class="cal-block twf">화목금</div>
       </div>
 
-      <div class="cal-cell">
-        <div class="cal-date">28</div>
-        <div class="cal-block mwf">월수금</div>
-      </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">29</div>
-        <div class="cal-block twf">화목금</div>
-      </div>
-
+      <!-- 11월 30일 ~ 12월 4일 -->
       <div class="cal-cell">
         <div class="cal-date">30</div>
         <div class="cal-block mwf">월수금</div>
       </div>
-
-      <!-- 11월 2일 ~ 11월 6일 -->
+      <div class="cal-cell">
+        <div class="cal-date">1</div>
+        <div class="cal-block twf">화목금</div>
+      </div>
       <div class="cal-cell">
         <div class="cal-date">2</div>
         <div class="cal-block mwf">월수금</div>
       </div>
-
       <div class="cal-cell">
         <div class="cal-date">3</div>
         <div class="cal-block twf">화목금</div>
       </div>
-
       <div class="cal-cell">
         <div class="cal-date">4</div>
         <div class="cal-block mwf">월수금</div>
       </div>
 
+      <!-- 12월 7일 ~ 12월 11일 -->
       <div class="cal-cell">
-        <div class="cal-date">5</div>
+        <div class="cal-date">7</div>
+        <div class="cal-block mwf">월수금</div>
+      </div>
+      <div class="cal-cell">
+        <div class="cal-date">8</div>
         <div class="cal-block twf">화목금</div>
       </div>
-
-      <div class="cal-cell">
-        <div class="cal-date">6</div>
-        <div class="cal-block twf">화목금</div>
-      </div>
-
-      <!-- 11월 9일 ~ 11월 11일 -->
       <div class="cal-cell">
         <div class="cal-date">9</div>
         <div class="cal-block mwf">월수금</div>
       </div>
-
       <div class="cal-cell">
         <div class="cal-date">10</div>
         <div class="cal-block twf">화목금</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">11</div></div>
 
-      <div class="cal-cell">
-        <div class="cal-date">11</div>
-        <div class="cal-block mwf">월수금</div>
-      </div>
-
-      <div class="cal-cell empty"></div>
-      <div class="cal-cell empty"></div>
     </div>
   </div>
 
@@ -1076,10 +1048,10 @@
   </div>
 </div>
 
-<!-- AI에이전트1 (화·목) -->
+<!-- AI에이전트 (화·목) -->
 <div id="sch-ai1" style="display:none">
   <div class="cal-wrap">
-    <div class="cal-header">2026년 10월 20일 ~ 11월 12일</div>
+    <div class="cal-header">2026년 11월 17일 ~ 12월 10일</div>
 
     <div class="cal-grid">
       <div class="cal-dow">월</div>
@@ -1088,73 +1060,58 @@
       <div class="cal-dow">목</div>
       <div class="cal-dow">금</div>
 
-      <!-- 10월 19일 ~ 10월 23일 -->
-      <div class="cal-cell empty"><div class="cal-date">19</div></div>
-
+      <!-- 11월 16일 ~ 11월 20일 -->
+      <div class="cal-cell empty"></div>
       <div class="cal-cell">
-        <div class="cal-date">20</div>
+        <div class="cal-date">17</div>
         <div class="cal-block twf">화·목</div>
       </div>
-
-      <div class="cal-cell empty"><div class="cal-date">21</div></div>
-
+      <div class="cal-cell empty"><div class="cal-date">18</div></div>
       <div class="cal-cell">
-        <div class="cal-date">22</div>
+        <div class="cal-date">19</div>
         <div class="cal-block twf">화·목</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">20</div></div>
 
+      <!-- 11월 23일 ~ 11월 27일 -->
       <div class="cal-cell empty"><div class="cal-date">23</div></div>
-
-      <!-- 10월 26일 ~ 10월 30일 -->
-      <div class="cal-cell empty"><div class="cal-date">26</div></div>
-
       <div class="cal-cell">
-        <div class="cal-date">27</div>
+        <div class="cal-date">24</div>
         <div class="cal-block twf">화·목</div>
       </div>
-
-      <div class="cal-cell empty"><div class="cal-date">28</div></div>
-
+      <div class="cal-cell empty"><div class="cal-date">25</div></div>
       <div class="cal-cell">
-        <div class="cal-date">29</div>
+        <div class="cal-date">26</div>
         <div class="cal-block twf">화·목</div>
       </div>
+      <div class="cal-cell empty"><div class="cal-date">27</div></div>
 
+      <!-- 11월 30일 ~ 12월 4일 -->
       <div class="cal-cell empty"><div class="cal-date">30</div></div>
-
-      <!-- 11월 2일 ~ 11월 6일 -->
+      <div class="cal-cell">
+        <div class="cal-date">1</div>
+        <div class="cal-block twf">화·목</div>
+      </div>
       <div class="cal-cell empty"><div class="cal-date">2</div></div>
-
       <div class="cal-cell">
         <div class="cal-date">3</div>
         <div class="cal-block twf">화·목</div>
       </div>
-
       <div class="cal-cell empty"><div class="cal-date">4</div></div>
 
+      <!-- 12월 7일 ~ 12월 11일 -->
+      <div class="cal-cell empty"><div class="cal-date">7</div></div>
       <div class="cal-cell">
-        <div class="cal-date">5</div>
+        <div class="cal-date">8</div>
         <div class="cal-block twf">화·목</div>
       </div>
-
-      <div class="cal-cell empty"><div class="cal-date">6</div></div>
-
-      <!-- 11월 9일 ~ 11월 12일 -->
       <div class="cal-cell empty"><div class="cal-date">9</div></div>
-
       <div class="cal-cell">
         <div class="cal-date">10</div>
         <div class="cal-block twf">화·목</div>
       </div>
-
       <div class="cal-cell empty"><div class="cal-date">11</div></div>
 
-      <div class="cal-cell">
-        <div class="cal-date">12</div>
-        <div class="cal-block twf">화·목</div>
-      </div>
-
-      <div class="cal-cell empty"></div>
     </div>
   </div>
 
@@ -1165,10 +1122,10 @@
   </div>
 </div>
 
-<!-- AI에이전트2 (월·수·금) -->
+<!-- AI프롬프트 (월·수·금) -->
 <div id="sch-ai2" style="display:none">
   <div class="cal-wrap">
-    <div class="cal-header">2026년 10월 19일 ~ 11월 13일</div>
+    <div class="cal-header">2026년 11월 18일 ~ 12월 14일</div>
 
     <div class="cal-grid">
       <div class="cal-dow">월</div>
@@ -1177,85 +1134,77 @@
       <div class="cal-dow">목</div>
       <div class="cal-dow">금</div>
 
-      <!-- 10월 19일 ~ 10월 23일 -->
+      <!-- 11월 16일 ~ 11월 20일 -->
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"><div class="cal-date">17</div></div>
       <div class="cal-cell">
-        <div class="cal-date">19</div>
+        <div class="cal-date">18</div>
+        <div class="cal-block mwf">월·수·금</div>
+      </div>
+      <div class="cal-cell empty"><div class="cal-date">19</div></div>
+      <div class="cal-cell">
+        <div class="cal-date">20</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
 
-      <div class="cal-cell empty"><div class="cal-date">20</div></div>
-
-      <div class="cal-cell">
-        <div class="cal-date">21</div>
-        <div class="cal-block mwf">월·수·금</div>
-      </div>
-
-      <div class="cal-cell empty"><div class="cal-date">22</div></div>
-
+      <!-- 11월 23일 ~ 11월 27일 -->
       <div class="cal-cell">
         <div class="cal-date">23</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
-
-      <!-- 10월 26일 ~ 10월 30일 -->
+      <div class="cal-cell empty"><div class="cal-date">24</div></div>
       <div class="cal-cell">
-        <div class="cal-date">26</div>
+        <div class="cal-date">25</div>
+        <div class="cal-block mwf">월·수·금</div>
+      </div>
+      <div class="cal-cell empty"><div class="cal-date">26</div></div>
+      <div class="cal-cell">
+        <div class="cal-date">27</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
 
-      <div class="cal-cell empty"><div class="cal-date">27</div></div>
-
-      <div class="cal-cell">
-        <div class="cal-date">28</div>
-        <div class="cal-block mwf">월·수·금</div>
-      </div>
-
-      <div class="cal-cell empty"><div class="cal-date">29</div></div>
-
+      <!-- 11월 30일 ~ 12월 4일 -->
       <div class="cal-cell">
         <div class="cal-date">30</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
-
-      <!-- 11월 2일 ~ 11월 6일 -->
+      <div class="cal-cell empty"><div class="cal-date">1</div></div>
       <div class="cal-cell">
         <div class="cal-date">2</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
-
       <div class="cal-cell empty"><div class="cal-date">3</div></div>
-
       <div class="cal-cell">
         <div class="cal-date">4</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
 
-      <div class="cal-cell empty"><div class="cal-date">5</div></div>
-
+      <!-- 12월 7일 ~ 12월 11일 -->
       <div class="cal-cell">
-        <div class="cal-date">6</div>
+        <div class="cal-date">7</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
-
-      <!-- 11월 9일 ~ 11월 13일 -->
+      <div class="cal-cell empty"><div class="cal-date">8</div></div>
       <div class="cal-cell">
         <div class="cal-date">9</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
-
       <div class="cal-cell empty"><div class="cal-date">10</div></div>
-
       <div class="cal-cell">
         <div class="cal-date">11</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
 
-      <div class="cal-cell empty"><div class="cal-date">12</div></div>
-
+      <!-- 12월 14일 ~ 12월 18일 -->
       <div class="cal-cell">
-        <div class="cal-date">13</div>
+        <div class="cal-date">14</div>
         <div class="cal-block mwf">월·수·금</div>
       </div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+      <div class="cal-cell empty"></div>
+
     </div>
   </div>
 
