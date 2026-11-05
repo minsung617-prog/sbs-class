@@ -1909,6 +1909,7 @@ render('전산세무회계');
       <button class="tab-pill" onclick="setTab('co','인테리어',this)">인테리어</button>
       <button class="tab-pill" onclick="setTab('co','웹/편집디자인',this)">웹/편집디자인</button>
       <button class="tab-pill" onclick="setTab('co','모션/VFX',this)">모션·영상·VFX</button>
+      <button class="tab-pill" onclick="setTab('co','드로잉/아트웍',this)">드로잉·아트웍</button>
     </div>
 
     <div class="company-grid" id="company-grid"></div>
@@ -2183,17 +2184,40 @@ const companies = [
   { name: '델픽디자인스튜디오', cat: '모션/VFX', url: 'https://delpic.com/main', emoji: '🔮', note: '주요 기업 · 모션그래픽' },
   { name: '슈퍼베리모어', cat: '모션/VFX', url: 'https://superverymore.tv/projects', emoji: '🫐', note: '주요 기업 · 모션그래픽' },
   { name: '디자인피버', cat: '모션/VFX', url: 'https://designfever.com/', emoji: '🔥', note: '주요 기업 · 디지털·모션' },
+
+  // 드로잉/아트웍 — 게임 원화·아트(2025 매출 상위 4) + 웹툰·캐릭터·애니메이션 주요 기업
+  { name: '넥슨', cat: '드로잉/아트웍', url: 'https://company.nexon.com/', emoji: '🎮', note: '게임사 매출 1위 · 2025' },
+  { name: '크래프톤', cat: '드로잉/아트웍', url: 'https://www.krafton.com/', emoji: '🪖', note: '게임사 매출 2위 · 2025' },
+  { name: '넷마블', cat: '드로잉/아트웍', url: 'https://company.netmarble.com/', emoji: '🎲', note: '게임사 매출 3위 · 2025' },
+  { name: '엔씨(NC)', cat: '드로잉/아트웍', url: 'https://www.nc.com/', emoji: '⚔️', note: '게임사 매출 4위 · 2025' },
+  { name: '스마일게이트', cat: '드로잉/아트웍', url: 'https://www.smilegate.com/ko/', emoji: '😊', note: '주요 기업 · 게임 원화·아트' },
+  { name: '펄어비스', cat: '드로잉/아트웍', url: 'https://www.pearlabyss.com/ko-KR', emoji: '🐚', note: '주요 기업 · 게임 원화·아트' },
+  { name: '시프트업', cat: '드로잉/아트웍', url: 'https://shiftup.co.kr/', emoji: '🎨', note: '주요 기업 · 게임 원화·일러스트' },
+  { name: '컴투스', cat: '드로잉/아트웍', url: 'https://www.com2us.com/ko', emoji: '📱', note: '주요 기업 · 게임 원화·아트' },
+  { name: '네오위즈', cat: '드로잉/아트웍', url: 'https://www.neowiz.com/kr', emoji: '🎯', note: '주요 기업 · 게임 원화·아트' },
+  { name: '카카오게임즈', cat: '드로잉/아트웍', url: 'https://kakaogames.com/', emoji: '🕹️', note: '주요 기업 · 게임 원화·아트' },
+  { name: '네이버웹툰', cat: '드로잉/아트웍', url: 'https://www.webtoonscorp.com/', emoji: '📗', note: '주요 기업 · 웹툰' },
+  { name: '카카오엔터테인먼트', cat: '드로잉/아트웍', url: 'https://www.kakaoent.com/', emoji: '📙', note: '주요 기업 · 웹툰·웹소설' },
+  { name: '레진코믹스', cat: '드로잉/아트웍', url: 'https://www.lezhin.com/ko', emoji: '📕', note: '주요 기업 · 웹툰' },
+  { name: '와이랩', cat: '드로잉/아트웍', url: 'https://www.ylab.kr/', emoji: '📘', note: '주요 기업 · 웹툰 스튜디오' },
+  { name: '레드아이스 스튜디오', cat: '드로잉/아트웍', url: 'https://www.redicestudio.com/', emoji: '🧊', note: '주요 기업 · 웹툰 스튜디오' },
+  { name: '디앤씨미디어', cat: '드로잉/아트웍', url: 'https://dncmedia.co.kr/', emoji: '📚', note: '주요 기업 · 웹툰·웹소설' },
+  { name: 'IPX(라인프렌즈)', cat: '드로잉/아트웍', url: 'https://ipxcorp.com/ko', emoji: '🐻', note: '주요 기업 · 캐릭터 디자인' },
+  { name: '더핑크퐁컴퍼니', cat: '드로잉/아트웍', url: 'https://www.thepinkfongcompany.com/', emoji: '🦊', note: '주요 기업 · 캐릭터·애니메이션' },
+  { name: '아이코닉스', cat: '드로잉/아트웍', url: 'https://www.iconix.co.kr/', emoji: '🐧', note: '주요 기업 · 캐릭터·애니메이션' },
 ];
 
 const companyCategoryBasis = {
   '인테리어':      '1~10위: 2026 실내건축공사업 시공능력평가(국토교통부) · 아래는 업계 주요 기업',
   '웹/편집디자인': '1~5위: 2025 매출 기준 · 이어서 업계 대표 에이전시와 주요 기업',
   '모션/VFX':      '공식 순위가 없어 업계 대표 스튜디오 순으로 정리 · 아래는 주요 기업',
+  '드로잉/아트웍':  '1~4위: 2025 게임사 매출 기준(원화·컨셉아트 채용) · 이어서 게임·웹툰·캐릭터 분야 주요 기업',
 };
 const companyCategoryLabels = {
   '인테리어':      '🏠 인테리어 학과',
   '웹/편집디자인': '🖥️ 웹디자인 · 편집디자인',
   '모션/VFX':      '🎬 모션그래픽 · 영상 · CG · VFX',
+  '드로잉/아트웍':  '✏️ 드로잉 · 아트웍 (게임 원화 · 웹툰 · 캐릭터)',
 };
 
 function renderCompanyGrid(tab) {
@@ -2202,7 +2226,7 @@ function renderCompanyGrid(tab) {
   grid.innerHTML = '';
 
   const cats = tab === 'all'
-    ? ['인테리어', '웹/편집디자인', '모션/VFX']
+    ? ['인테리어', '웹/편집디자인', '모션/VFX', '드로잉/아트웍']
     : [tab];
 
   cats.forEach(cat => {
