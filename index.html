@@ -211,6 +211,8 @@
   .c-purple .card-icon { background: #f5f3ff; }
   .c-teal { --card-accent: #0d9488; }
   .c-teal .card-icon { background: #f0fdfa; }
+  .c-pink { --card-accent: #db2777; }
+  .c-pink .card-icon { background: #fdf2f8; }
   .c-gray { --card-accent: #6b7280; }
   .c-gray .card-icon { background: #f9fafb; }
 
@@ -793,6 +795,12 @@
       <div class="card-title">자격증 시험 일정</div>
       <div class="card-desc">연간 자격증 시험 일정을 한눈에 확인하세요.</div>
       <div class="card-arrow">시험 일정 보기 <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </a>
+    <a class="nav-card c-pink" onclick="showPage('seminar')">
+      <div class="card-icon">🎤</div>
+      <div class="card-title">세미나 일정</div>
+      <div class="card-desc">이번 달 학원 세미나·특강 일정을 확인하세요.</div>
+      <div class="card-arrow">세미나 보기 <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </a>
     <a class="nav-card c-purple" onclick="showPage('company')">
       <div class="card-icon">🏢</div>
@@ -1545,6 +1553,59 @@
 
 </div>
 </div>
+
+
+<!-- ══════════════ SEMINAR ══════════════ -->
+<div id="page-seminar" class="page-view">
+  <div class="section" style="padding-top:2rem">
+    <div class="section-header">
+      <div>
+        <p class="section-eyebrow">Seminar</p>
+        <h2 class="section-title">세미나 일정</h2>
+        <p class="section-desc">수강생이라면 누구나 참여할 수 있는 학원 세미나·특강 일정입니다.</p>
+      </div>
+      <button class="back-btn" onclick="showPage('home')">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        처음으로
+      </button>
+    </div>
+    <div id="sem-updated" style="font-size:11px;color:var(--text-muted);margin-bottom:1rem"></div>
+    <div id="sem-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem"></div>
+    <div class="notice-box" style="margin-top:1.5rem">
+      <strong>📌 신청 방법</strong><br>
+      학원 인포데스크 또는 담당 멘토를 통해 신청해 주세요.<br>
+      정원이 정해져 있어 조기 마감될 수 있습니다.
+    </div>
+  </div>
+</div>
+<div id="sem-modal" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;cursor:zoom-out">
+  <img id="sem-modal-img" alt="세미나 포스터" style="max-width:100%;max-height:100%;border-radius:12px">
+</div>
+<script>
+(function(){
+  const DOW=['일','월','화','수','목','금','토'];
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  fetch('seminars.json?v='+Date.now()).then(r=>r.json()).then(data=>{
+    const today=new Date(Date.now()+9*3600e3).toISOString().slice(0,10);
+    const list=data.seminars.filter(s=>s.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
+    document.getElementById('sem-updated').textContent='인트라넷 세미나 게시판 기준 · '+data.updated+' 갱신';
+    const el=document.getElementById('sem-list');
+    if(!list.length){el.innerHTML='<div style="font-size:13px;color:var(--text-muted);padding:1rem 0">예정된 세미나가 없습니다. 새 세미나가 등록되면 이곳에 안내됩니다.</div>';return;}
+    el.innerHTML=list.map(s=>{
+      const d=new Date(s.date+'T00:00:00Z'); const [y,m,dd]=s.date.split('-');
+      const dleft=Math.round((d-new Date(today+'T00:00:00Z'))/864e5);
+      const badge=dleft===0?'오늘':'D-'+dleft;
+      return '<div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">'
+        +(s.poster?'<img src="'+esc(s.poster)+'" alt="'+esc(s.title)+' 포스터" loading="lazy" style="width:100%;aspect-ratio:420/594;object-fit:cover;cursor:zoom-in;display:block" onclick="document.getElementById(\'sem-modal-img\').src=this.src;document.getElementById(\'sem-modal\').style.display=\'flex\'">':'')
+        +'<div style="padding:1rem 1.1rem 1.2rem">'
+        +'<div style="display:flex;align-items:center;gap:8px;margin-bottom:.4rem"><span style="font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:#db2777;color:#fff">'+badge+'</span><span style="font-size:12px;color:var(--text-secondary)">'+(+m)+'월 '+(+dd)+'일 ('+DOW[d.getUTCDay()]+')</span></div>'
+        +'<div style="font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:.6rem">'+esc(s.title)+' 세미나</div>'
+        +'<div style="font-size:13px;color:var(--text-secondary);line-height:1.8">🕐 '+esc(s.time)+'<br>📍 '+esc(s.place)+(s.quota?'<br>👥 정원 '+s.quota+'명':'')+'</div>'
+        +'</div></div>';
+    }).join('');
+  }).catch(()=>{document.getElementById('sem-list').innerHTML='<div style="font-size:13px;color:var(--text-muted)">세미나 일정을 불러오지 못했습니다.</div>';});
+})();
+</script>
 
 <!-- ══════════════ EXAM ══════════════ -->
 <div id="page-exam" class="page-view">
